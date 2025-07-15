@@ -53,11 +53,9 @@ A Python-based Telegram bot for managing stock price alerts 📊, using Yahoo Fi
    sudo systemctl daemon-reload
    sudo systemctl enable tsa_bot.service
    sudo systemctl start tsa_bot.service
+```
 
-
-   sudo nano /etc/systemd/system/check_alerts.service
-   
-   sudo systemctl daemon-reload
-   sudo systemctl enable check_alerts.service
-   sudo systemctl start check_alerts.service
+```bash
+crontab -e
+0 * * * * /usr/bin/python3 /home/ubuntu/TSA/alert_worker.py >> /home/ubuntu/TSA/cron.log 2>&1
 ```

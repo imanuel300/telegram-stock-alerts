@@ -1,4 +1,5 @@
 import logging
+from logging.handlers import RotatingFileHandler
 
 
 def setup_logger(logger_name):
@@ -6,8 +7,10 @@ def setup_logger(logger_name):
     logger = logging.getLogger(logger_name)
     logger.setLevel(logging.DEBUG)
 
-    # Create a FileHandler to write logs to events.log
-    file_handler = logging.FileHandler('./events.log')
+    # Create a RotatingFileHandler to write logs to events.log with size limit
+    file_handler = RotatingFileHandler(
+        './events.log', maxBytes=20*1024*1024, backupCount=7
+    )
     file_handler.setLevel(logging.DEBUG)
 
     # Create a Formatter to specify the log message format
