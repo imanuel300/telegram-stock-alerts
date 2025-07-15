@@ -1,0 +1,20 @@
+[Unit]
+Description=Telegram Bot Service
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/TSA
+ExecStart=/usr/bin/python3 /home/ubuntu/TSA/bot.py
+Environment=REQUESTS_CA_BUNDLE=/home/ubuntu/.local/lib/python3.12/site-packages/certifi/cacert.pem
+Environment=CURL_CA_BUNDLE=/home/ubuntu/.local/lib/python3.12/site-packages/certifi/cacert.pem
+
+# הגדרות שירות
+Restart=always
+RestartSec=5
+TimeoutStartSec=60
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
