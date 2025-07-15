@@ -47,7 +47,7 @@ A Python-based Telegram bot for managing stock price alerts 📊, using Yahoo Fi
    ```
    Replace `your_telegram_bot_token_here` with your actual Telegram bot token.
 
-
+```bash
    sudo nano /etc/systemd/system/tsa_bot.service
    
    sudo systemctl daemon-reload
@@ -60,3 +60,4 @@ A Python-based Telegram bot for managing stock price alerts 📊, using Yahoo Fi
    sudo systemctl daemon-reload
    sudo systemctl enable check_alerts.service
    sudo systemctl start check_alerts.service
+```
