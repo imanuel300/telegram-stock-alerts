@@ -53,6 +53,7 @@ A Python-based Telegram bot for managing stock price alerts 📊, using Yahoo Fi
    sudo systemctl daemon-reload
    sudo systemctl enable tsa_bot.service
    sudo systemctl start tsa_bot.service
+   sudo systemctl restart tsa_bot.service
 ```
 
 ```bash
